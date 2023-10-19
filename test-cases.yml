@@ -1,0 +1,492 @@
+---
+- summary: |
+    Успешная регистрация на сайте
+  requirement: |
+    При вводе всех данных пользователь должен быть зарегистрирован на сайте
+  prerequisites: |
+    Наличие существующего email-адреса 
+  test-data: |
+    Nickname = Helga 
+    Email = mokinao@inbox.ru
+    Password = poiu7777777
+  steps:
+    - Вводим Nickname
+    - Вводим email
+    - Вводим пароль
+    - Подтверждаем пароль
+    - Нажимаем кнопку «Submit»
+  expected-result: |
+    Пользователь должен попасть на главную страницу
+
+- summary: |
+    Успешная авторизация на сайте с помощью Git
+  requirement: |
+    При наличии профиля на Github пользователь должен быть авторизован
+  prerequisites: |
+    открыта страница https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password и у пользователя есть профиль на Github
+  test-data: |
+    -
+  steps:
+    - Нажимаем на кнопку "Sign in with Github"
+  expected-result: |
+    Пользователь должен попасть на главную страницу
+
+- summary: |
+    Успешная авторизация на сайте
+  requirement: |
+    При корректном вводе данных пользователь должен быть авторизован на сайте
+  prerequisites: |
+    открыта страница https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password и пользователь был зарегистрирован на сайте ранее
+  test-data: | 
+    Email = mokinao@inbox.ru
+    Password = poiu7777777
+  steps:
+    - Вводим email
+    - Вводим пароль
+    - Нажимаем кнопку «Submit»
+  expected-result: |
+    Пользователь должен попасть на главную страницу
+
+- summary: |
+    Успешное восстановление пароля
+  requirement: |
+    Пользователь должен иметь возможность восстановить пароль
+  prerequisites:
+    окно входа на сайт https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    - 
+  steps:
+    - Нажимаем на ссылку "Forgot your password?"
+    - В появившемся окне вводим email
+    - Нажимаем "Submit"
+  expected-result: |
+    На почту должна прийти ссылка для сброса пароля
+
+- summary: |
+    Успешное отправление личного сообщения пользователям в сети
+  requirement: |
+    Пользователь может отправлять другим пользователям личное сообщение
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F и наличие пользователей в сети
+  test-data: |
+    - 
+  steps:
+    - Находим внизу посередине сайта элемент страницы с названием "Online players"
+    - кликаем левой кнопкой мыши по пользователю, кому хотим отправить сообщение
+    - в появившемся окне выбираем "Direct message"
+    - в проявившемся окне набираем: "Hello"
+    - нажимаем "Send"
+  expected-result: |
+    Сообщение должно отправится в чат
+
+- summary: |
+    Успешное отправление сообщения в общий чат
+  requirement: |
+    Пользователь может отправлять сообщения в общий чат
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
+  test-data: |
+    - 
+  steps:
+    - Находим в левом нижнем углу сайта окно для сообщений
+    - в выпадающем списке выбираем "General"
+    - набираем текс "Hello"
+    - нажимаем "Send"
+  expected-result: |
+    Сообщение должно отправится в общий чат
+
+- summary: |
+    Успешное создание новой игры с ботом
+  requirement: |
+    Пользователь должен иметь возможность создавать новую игру с ботом
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
+  test-data: |
+    - 
+  steps:
+    - Находим справа кнопку "CREATE A GAME"
+    - Кликаем по ней
+    - в всплывающем окне в пункте "Game Type" выбираем "With a bot"
+    - кликаем по кнопке "Create battle"
+  expected-result: |
+    Появляется страница с игрой
+
+- summary: |
+    Успешное создание новой игры с пользователями в сети
+  requirement: |
+    Пользователь должен иметь возможность создавать новую игру с пользователями в сети
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
+  test-data: |
+    - 
+  steps:
+    - Находим справа кнопку "CREATE A GAME"
+    - Кликаем по ней
+    - в всплывающем окне в пункте "Game Type" выбираем "With others users"
+    - кликаем по кнопке "Create battle"
+  expected-result: |
+    На главной странице во вкладе "LOBBY" появляется игра со статусом "Continue"
+
+- summary: |
+    Успешная отправка пользователю приглашения к игре
+  requirement: |
+    Пользователь должен иметь возможность отправлять приглашение к игре другим пользователям
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
+  test-data: |
+    - 
+  steps:
+    - Находим справа кнопку "CREATE A GAME"
+    - Кликаем по ней
+    - в всплывающем окне в пункте "Game Type" выбираем "With a friend"
+    - в пункте "Choose opponent" выбираем друга
+    - кликаем по кнопке "Create battle"
+  expected-result: |
+    На главной странице при нажатии на иконку мечей появится сообщение: "You invited name_friend"
+
+- summary: |
+    Успешное задание уровня игры
+  requirement: |
+    Пользователь должен иметь возможность задавать уровень игры
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
+  test-data: |
+    - 
+  steps:
+    - Находим справа кнопку "CREATE A GAME"
+    - Кликаем по ней
+    - в всплывающем окне в пункте "Level" выбираем нужный уровень "4 звезды"
+    - кликаем по кнопке "Create battle"
+  expected-result: |
+    Запускается игра четвёртого уровня сложности
+
+- summary: |
+    Успешное задание тайминга игры
+  requirement: |
+    Пользователь должен иметь возможность задавать тайминг игры
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
+  test-data: |
+    - 
+  steps:
+    - Находим справа кнопку "CREATE A GAME"
+    - Кликаем по ней
+    - в всплывающем окне в пункте "Time control"  устанавливаем ползунком 28 минут
+    - кликаем по кнопке "Create battle"
+  expected-result: |
+    Запускается игра с установленным ограничением в 28 минут
+
+- summary: |
+    Успешное задание игры по тегам
+  requirement: |
+    Пользователь должен иметь возможность задавать игру по тегам
+  prerequisites:
+    главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
+  test-data: |
+    - 
+  steps:
+    - Находим справа кнопку "CREATE A GAME"
+    - Кликаем по ней
+    - в всплывающем окне в пункте "Choose task by name or tags"  устанавливаем  тег "string"
+    - кликаем по кнопке "Create battle"
+  expected-result: |
+    Запускается игра на тему работы со строками
+
+- summary: |
+    Успешное принятие приглашения на игру
+  requirement: |
+    Пользователь должен иметь возможность принимать приглашение на игру
+  prerequisites:
+    открыта главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F и пользователю отправлено приглашение
+  test-data: |
+    - 
+  steps:
+    - Находим в правом верхнем углу иконку мечей
+    - Кликаем по ней
+    - В появившемся окне выбираем: "Accept"
+  expected-result: |
+     Запускается игра
+
+- summary: |
+    Успешное отклонение приглашения на игру
+  requirement: |
+    Пользователь должен иметь возможность отклонять приглашение на игру
+  prerequisites:
+    открыта главная страница сайта https://codebattle.hexlet.io/session/new?locale=en&next=%2F и пользователю отправлено приглашение
+  test-data: |
+    - 
+  steps:
+    - Находим в правом верхнем углу иконку мечей
+    - Кликаем по ней
+    - В появившемся окне выбираем: "Decline"
+  expected-result: |
+     Остается главная страница
+
+- summary: |
+    Успешный выбор языка программирования для игры
+  requirement: |
+    Пользователь должен иметь возможность выбирать язык в запущенной игре
+  prerequisites:
+    открыта страница https://codebattle.hexlet.io/games/ запущенной игры
+  test-data: |
+    - 
+  steps:
+    - Находим посередине экрана панель управления
+    - выбираем первую кнопку слева
+    - Кликаем по ней
+    - В появившемся списке выбираем язык "Python"
+  expected-result: |
+     В редакторе появляются заголовки, соответствующие языку Python
+
+- summary: |
+    Успешный набор кода в окне редактирования
+  requirement: |
+    Пользователь должен иметь возможность набирать код в окне редактирования
+  prerequisites:
+    открыта страница https://codebattle.hexlet.io/games/ запущенной игры
+  test-data: |
+    - 
+  steps:
+    - Слева внизу находим окно редактирования кода
+    - набираем код
+  expected-result: |
+     Код отображается в окне редактирования
+
+- summary: |
+    Успешный сброс кода в окне редактирования
+  requirement: |
+    Пользователь должен иметь возможность сбрасывать код в окне редактирования
+  prerequisites:
+    открыта страница https://codebattle.hexlet.io/games/ запущенной игры и набран код в окне редактирования
+  test-data: |
+    - 
+  steps:
+    - На панели управления выпираем кнопку "resert button"
+    - кликаем по ней
+  expected-result: |
+     Код сбрасывается в окне редактирования
+
+- summary: |
+    Успешная проверка решения
+  requirement: |
+    Пользователь должен иметь возможность проверять решения
+  prerequisites:
+    открыта страница https://codebattle.hexlet.io/games/ запущенной игры и набран код в окне редактирования
+  test-data: |
+    - 
+  steps:
+    - На панели управления выбираем кнопку "Check button"
+    - кликаем по ней
+  expected-result: |
+     Появляется поле "Result output"
+
+- summary: |
+    Успешная проверка возможности сдаться во время игры 
+  requirement: |
+    Пользователь должен иметь возможность сдаться во время игры
+  prerequisites:
+    открыта страница https://codebattle.hexlet.io/games/ запущенной игры 
+  test-data: |
+    - 
+  steps:
+    - На панели управления выбираем кнопку "Give up"
+    - кликаем по ней
+  expected-result: |
+    Появляется окно с сообщением: ""If you read this you've lost the game"
+
+- summary: |
+    Успешное создание матча-реванша
+  requirement: |
+    Пользователь должен иметь возможность взять матч-реванш
+  prerequisites:
+    открыта страница https://codebattle.hexlet.io/games/ и игра проиграна пользователем
+  test-data: |
+    - 
+  steps:
+    - справа рядом с окном противника находим кнопку "Rematch"
+    - кликаем по ней
+  expected-result: |
+    Запускается новая игра
+
+- summary: |
+    Успешное дорешивание задачи в случае проигрыша
+  requirement: |
+     В случае проигрыша пользователь должен иметь возможность дорешать задачу
+  prerequisites:
+    открыта страница https://codebattle.hexlet.io/games/ и игра проиграна пользователем
+  test-data: |
+    - 
+  steps:
+    - дописываем код задачи
+    - На панели управления выбираем кнопку "Check button"
+    - Кликаем по ней
+  expected-result: |
+    Появляется поле "Result output"
+
+- summary: |
+    Проверка отображения спиннера при низкой скорости интернета
+  requirement: |
+    При низкой скорости интернета при загрузке страницы должен отображаться спиннер
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/#lobby в браузере Google Chrome
+  test-data: |
+    -
+  steps:
+    - Открываем инструмент разработчика
+    - Во вкладке Network выбираем Slow 3G
+    - Перезагружаем страницу
+  expected-result: |
+    Должен появится спиннер, который пропадает с полной загрузкой страницы
+    #аналогичная проверка для остальных популярных браузеров: Edge, Mozilla Firefox
+
+- summary: |
+    Проверка наличия мобильной версии сайта
+  requirement: |
+    Сайт должен иметь мобильную версию 
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/#lobby в браузере Google Chrome
+  test-data: |
+    -
+  steps:
+    - Открываем инструмент разработчика
+    - Во вкладке Dimensions выбираем различные устройства
+  expected-result: |
+    Страница должна отображаться на экране мобильного устройства корректно, все поля отображаются полностью
+    #аналогичная проверка для остальных популярных браузеров: Edge, Mozilla Firefox
+
+- summary: |
+    Успешный перевод условия задачи с английского языка на русский
+  requirement: |
+    Сайт должен переключаться на разные языки
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/games/ с игрой
+  test-data: |
+    -
+  steps:
+    - Нажимаем на кнопку перевода языка
+    - Выбираем "Russian"
+  expected-result: |
+    Условие задачи должно появиться на русском языке
+
+- summary: |
+    Проверка кроссбраузерности
+  requirement: |
+    Страница должна корректно отображаться во всех актуальных браузерах
+  prerequisites: |
+    Установлены браузеры Edge, Mozilla Firefox, Google Chrome 
+  test-data: |
+    Страница https://codebattle.hexlet.io/#lobby
+  steps:
+    - Открываем браузер Edge
+    - Переходим на страницу https://codebattle.hexlet.io/#lobby
+    - Открываем браузер Mozilla Firefox
+    - Переходим на страницу https://codebattle.hexlet.io/#lobby
+    - Открываем браузер Google Chrome
+    - Переходим на страницу https://codebattle.hexlet.io/#lobby
+  expected-result: |
+    Приложение должно корректно отображаться и функционировать во всех браузерах
+
+- summary: |
+    Проверка работы скроллинга
+  requirement: |
+    Страница должна прокручиваться вниз при использовании скролла
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    -
+  steps:
+    - Нажимаем на кнопку скролла и ведём указатель мыши вниз 
+  expected-result: |
+    Выводится нижняя часть страницы
+
+- summary: |
+    Сайт должен отображать таблицу лидеров
+  requirement: |
+    Сайт должен отображать таблицу лидеров за неделю/месяц
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    -
+  steps:
+    - находим справа поле LEADERBOARD
+    - Внизу окна нажимаем на кнопку "Top list"
+  expected-result: |
+    Выводится информация по игрокам по рейтингу по убыванию
+
+- summary: |
+    Сайт должен отображать список всех задач
+  requirement: |
+    Сайт должен отображать все задачи, размещенные на сайте
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/games/
+  test-data: |
+    -
+  steps:
+    - нажимаем на иконку пользователя
+    - в выпадающем списке выбираем "Tasks"
+  expected-result: |
+    Выводится список задач
+
+- summary: |
+    Успешный просмотр хода текущей игры
+  requirement: |
+    - Пользователь может просматривать ход текущей игры
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    -
+  steps:
+    - во вкладке LOBBY выбираем игру со статусом "Show"
+  expected-result: 
+    Открывается текущая игра
+
+- summary: |
+    Успешный просмотр расписания предстоящих турниров
+  requirement: |
+    - Сайт должен отображать расписание предстоящих турниров
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    -
+  steps:
+    - в шапке окна игр заходим во вкладку "TOURNAMENTS"
+  expected-result: 
+    На экране отображается информация о турнирах
+
+- summary: |
+    Успешный просмотр инструкции перед началом игры
+  requirement: |
+    - Сайт должен отображать инструкцию перед началом игры
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/games/ с запущенной игрой
+  test-data: |
+    -
+  steps:
+    - в шапке окна игры нажимаем на кнопку "Show guide"
+  expected-result: 
+    Выводится поэтапная инструкция к игре
+
+- summary: |
+    Успешное добавление задачи в Task packs
+  requirement: |
+    - Пользователь может добавлять новые задачи от своего имени
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    -
+  steps:
+    - Нажимаем на иконку профиля
+    - в выпавшем списке выбираем "Task"
+    - кликаем по "Create new task"
+    - в поле "Task" вводим название задачи
+    - в поле "Description" вводим условие 
+    - в поле "Input parameters types" вводим тип вводимых данных
+    - в поле "Output parameter type" вводим тип выводимых данных
+    - в поле "Example" вводим три примера
+    - кликаем по кнопке "Testing"
+    - в окне редактора вводим решение 
+    - нажимаем на кнопку "Check button"
+    - Кликаем по кнопке "Save"
+    - в всплывающем окне выбираем "Confirm"
+  expected-result: 
+    Задача появляется в списке задач
