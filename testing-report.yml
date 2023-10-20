@@ -100,6 +100,10 @@
   status: pass
 
 - summary: |
+    Успешное проверка нагрузки сайта
+  status: fail
+
+- summary: |
     Проверка работы скроллинга
   status: pass
 
