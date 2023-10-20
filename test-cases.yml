@@ -387,6 +387,43 @@
     Приложение должно корректно отображаться и функционировать во всех браузерах
 
 - summary: |
+    Проверка нагрузки сайта
+  requirement: |
+    Сайт должен быть способен обрабатывать 1000 одновременных загрузок
+  prerequisites: |
+    Установлен инструмент Jmeter
+  test-data: |
+    -
+  steps:
+    - Открываем инструмент  Jmeter
+    - правой кнопкой мыши кликаем на кнопку Test plan
+    - выбираем Add
+    - выбираем Threads(Users)
+    - выбираем Thread Group 
+    - в поле Number of Threads (users) вводим: 1000
+    - правой кнопкой мыши кликаем на кнопку Thread Group
+    - выбираем Add
+    - выбираем Sampler 
+    - выбираем HTTP Request
+    - в поле Protocol[http] вводим: http
+    - в поле Server Name or IP вводим: codebattle.hexlet.io
+    - правой кнопкой мыши кликаем на кнопку HTTP Request
+    - выбираем Add
+    - выбираем Listener
+    - выбираем View Results Tree
+    - правой кнопкой мыши кликаем на кнопку HTTP Request
+    - выбираем Add
+    - выбираем Listener
+    - выбираем View Results in Table
+    - правой кнопкой мыши кликаем на кнопку HTTP Request
+    - выбираем Add
+    - выбираем Listener
+    - выбираем Summary Report
+    - нажимает на кнопку "Start"
+  expected-result: |
+    Во вкладке Summary Report тест выдал 0% ошибок
+
+- summary: |
     Проверка работы скроллинга
   requirement: |
     Страница должна прокручиваться вниз при использовании скролла
