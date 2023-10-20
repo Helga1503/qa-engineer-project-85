@@ -393,7 +393,9 @@
   prerequisites: |
     Установлен инструмент Jmeter
   test-data: |
-    -
+    Threads (users): 1000
+    Protocol[http]: http
+    Server Name: codebattle.hexlet.io
   steps:
     - Открываем инструмент  Jmeter
     - правой кнопкой мыши кликаем на кнопку Test plan
