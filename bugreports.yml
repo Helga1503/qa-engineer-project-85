@@ -4,6 +4,7 @@
   environment: |
     Браузер yandex версия 23.9.2.888 (64-bit)
     ОС Windows 22H2
+    Apache JMeter (5.6.2)
   steps-to-reproduce: |
     1. Открываем инструмент Jmeter
     2. правой кнопкой мыши кликаем на кнопку Test plan
