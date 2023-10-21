@@ -420,9 +420,10 @@
     - нажимаем на Save Test Plan as
     - сохраняем в папке JMETERS с названием LoadTestMyHomePage-100.jmx
     - запускаем командную строку
-    - вводим ..\apache-jmeter-5.6.2\apache-jmeter-5.6.2\bin\jmeter -n -t .\LoadTestMyHomePage-100.jmx -l log-100.jtl -e -o .\RESULT-100\
+    - вводим ..\apache-jmeter-5.6.2\apache-jmeter-5.6.2\bin\jmeter -n -t .\LoadTestMyHomePage-1000.jmx -l log-100.jtl -e -o .\RESULT-1000\
     - ждем выполнение теста
-    - в папке JMETERS 
+    - в папке JMETERS входим в папку RESULT-1000
+    - открываем файл index в браузере
   expected-result: |
     На диаграмме Requests Summary 100% pass
     
