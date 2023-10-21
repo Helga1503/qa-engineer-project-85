@@ -407,24 +407,20 @@
     - выбираем Add
     - выбираем Sampler 
     - выбираем HTTP Request
-    - в поле Protocol[http] вводим: http
-    - в поле Server Name or IP вводим: codebattle.hexlet.io
+    - в поле Protocol[http] вводим http
+    - в поле Server Name or IP вводим codebattle.hexlet.io
     - правой кнопкой мыши кликаем на кнопку HTTP Request
     - выбираем Add
-    - выбираем Listener
-    - выбираем View Results Tree
-    - правой кнопкой мыши кликаем на кнопку HTTP Request
-    - выбираем Add
-    - выбираем Listener
-    - выбираем View Results in Table
-    - правой кнопкой мыши кликаем на кнопку HTTP Request
-    - выбираем Add
-    - выбираем Listener
-    - выбираем Summary Report
+    - выбираем Assertions
+    - выбираем Response Assertion
+    - в поле Field to Test ставим галочку на Response Code
+    - в поле Pattern Matching Rules to Test ставим галочку на Equals
+    - в поле Pattern to Test вводим 200
     - нажимает на кнопку "Start"
+    - запускаем тест в командной строке
   expected-result: |
-    Во вкладке Summary Report тест выдал 0% ошибок
-
+    На диаграмме Requests Summary 100% pass
+    
 - summary: |
     Проверка работы скроллинга
   requirement: |
