@@ -416,8 +416,13 @@
     - в поле Field to Test ставим галочку на Response Code
     - в поле Pattern Matching Rules to Test ставим галочку на Equals
     - в поле Pattern to Test вводим 200
-    - нажимает на кнопку "Start"
-    - запускаем тест в командной строке
+    - нажимаем на вкладку File
+    - нажимаем на Save Test Plan as
+    - сохраняем в папке JMETERS с названием LoadTestMyHomePage-100.jmx
+    - запускаем командную строку
+    - вводим ..\apache-jmeter-5.6.2\apache-jmeter-5.6.2\bin\jmeter -n -t .\LoadTestMyHomePage-100.jmx -l log-100.jtl -e -o .\RESULT-100\
+    - ждем выполнение теста
+    - в папке JMETERS 
   expected-result: |
     На диаграмме Requests Summary 100% pass
     
