@@ -402,7 +402,7 @@
     - выбираем Add
     - выбираем Threads(Users)
     - выбираем Thread Group 
-    - в поле Number of Threads (users) вводим: 1000
+    - в поле Number of Threads (users) вводим 1000
     - правой кнопкой мыши кликаем на кнопку Thread Group
     - выбираем Add
     - выбираем Sampler 
@@ -418,7 +418,7 @@
     - в поле Pattern to Test вводим 200
     - нажимаем на вкладку File
     - нажимаем на Save Test Plan as
-    - сохраняем в папке JMETERS с названием LoadTestMyHomePage-100.jmx
+    - сохраняем в папке JMETERS с названием LoadTestMyHomePage-1000.jmx
     - запускаем командную строку
     - вводим ..\apache-jmeter-5.6.2\apache-jmeter-5.6.2\bin\jmeter -n -t .\LoadTestMyHomePage-1000.jmx -l log-100.jtl -e -o .\RESULT-1000\
     - ждем выполнение теста
