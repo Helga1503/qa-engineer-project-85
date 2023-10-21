@@ -1,0 +1,39 @@
+---
+- summary: |
+    Сайт не выдерживает 1000 одновременных загрузок
+  environment: |
+    Версия 117.0.5938.150 (Официальная сборка), (64 бит)
+    ОС Windows 22H2
+  steps-to-reproduce: |
+    1. Открываем инструмент Jmeter
+    2. правой кнопкой мыши кликаем на кнопку Test plan
+    3. выбираем Add
+    4. выбираем Threads(Users)
+    5. выбираем Thread Group 
+    6. в поле Number of Threads (users) вводим 1000
+    7. правой кнопкой мыши кликаем на кнопку Thread Group
+    8. выбираем Add
+    9. выбираем Sampler 
+    10. выбираем HTTP Request
+    11. в поле Protocol[http] вводим http
+    12. в поле Server Name or IP вводим codebattle.hexlet.io
+    13. правой кнопкой мыши кликаем на кнопку HTTP Request
+    14. выбираем Add
+    15. выбираем Assertions
+    16. выбираем Response Assertion
+    17. в поле Field to Test ставим галочку на Response Code
+    18. в поле Pattern Matching Rules to Test ставим галочку на Equals
+    19. в поле Pattern to Test вводим 200
+    20. нажимаем на вкладку File
+    21. нажимаем на Save Test Plan as
+    22. сохраняем в папке JMETERS с названием LoadTestMyHomePage-1000.jmx
+    23. запускаем командную строку
+    24. вводим ..\apache-jmeter-5.6.2\apache-jmeter-5.6.2\bin\jmeter -n -t .\LoadTestMyHomePage-1000.jmx -l log-100.jtl -e -o .\RESULT-1000\
+    25. ждем выполнение теста
+    26. в папке JMETERS входим в папку RESULT-1000
+    27. открываем файл index в браузере
+    На странице видна кнопка регистрации    
+  expected-result: |
+    На диаграмме Requests Summary 100% pass
+  actual-result: |
+    На диаграмме Requests Summary 64.44% pass
